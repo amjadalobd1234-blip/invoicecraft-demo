@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InvoiceCraft — Professional Invoice Generator</title>
+  <meta name="description" content="Create beautiful, professional invoices in seconds. No sign-up, works offline, 100% private.">
+  <meta name="theme-color" content="#1e40af">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Fonts: Inter (Latin), Cairo (Arabic), Playfair Display (Classic template headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-view="edit">
+
+<!-- ================= ICON SPRITE (inline, works offline) ================= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16v5M16.5 18.5h5"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M6 14l1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.5-.7 1.5-1.5 0-.4-.2-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16c3.3 0 6-2.7 6-6 0-5-4.5-9-10-9z"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</svg>
+
+<!-- ================= APP BAR ================= -->
+<header class="appbar">
+  <div class="brand">
+    <div class="brand-mark"><svg class="ic"><use href="#i-file"/></svg></div>
+    <div class="brand-text">
+      <strong>InvoiceCraft</strong>
+      <span data-i18n="brandTag">Invoice Generator</span>
+    </div>
+  </div>
+
+  <div class="save-status" id="saveStatus" aria-live="polite"><span class="dot"></span><span class="txt"></span></div>
+
+  <nav class="actions" aria-label="Actions">
+    <button class="btn btn-ghost" data-action="new" data-i18n-title="new"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="new">New</span></button>
+    <button class="btn btn-ghost" data-action="sample" data-i18n-title="sample"><svg class="ic"><use href="#i-sparkles"/></svg><span data-i18n="sample">Sample Data</span></button>
+    <button class="btn btn-ghost" data-action="save" data-i18n-title="save"><svg class="ic"><use href="#i-save"/></svg><span data-i18n="save">Save Draft</span></button>
+    <button class="btn btn-ghost" data-action="drafts" data-i18n-title="drafts"><svg class="ic"><use href="#i-folder"/></svg><span data-i18n="drafts">Load Draft</span><em class="count" id="draftCount" hidden>0</em></button>
+    <button class="btn btn-ghost btn-ghost-danger" data-action="clear" data-i18n-title="clear"><svg class="ic"><use href="#i-trash"/></svg><span data-i18n="clear">Clear All</span></button>
+    <span class="sep" aria-hidden="true"></span>
+    <button class="btn btn-ghost" data-action="lang" title="English / العربية"><svg class="ic"><use href="#i-globe"/></svg><span data-i18n="langToggle">العربية</span></button>
+    <button class="btn btn-outline" data-action="print" data-i18n-title="print"><svg class="ic"><use href="#i-printer"/></svg><span data-i18n="print">Print</span></button>
+    <button class="btn btn-primary hide-mobile" data-action="download"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="download">Download PDF</span></button>
+  </nav>
+</header>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<main class="layout">
+
+  <!-- ---------- EDITOR ---------- -->
+  <section class="editor" id="editor" aria-label="Invoice editor">
+
+    <!-- Design -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-palette"/></svg></span>
+        <span class="card-title" data-i18n="secDesign">Design</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <label class="label" data-i18n="template">Template</label>
+        <div class="tpl-grid">
+          <button type="button" class="tpl-btn" data-action="template" data-value="minimal">
+            <span class="tpl-thumb thumb-minimal"><i></i><i></i><i></i><i></i></span>
+            <span data-i18n="tplMinimal">Minimal</span>
+          </button>
+          <button type="button" class="tpl-btn" data-action="template" data-value="classic">
+            <span class="tpl-thumb thumb-classic"><i></i><i></i><i></i><i></i></span>
+            <span data-i18n="tplClassic">Classic</span>
+          </button>
+          <button type="button" class="tpl-btn" data-action="template" data-value="modern">
+            <span class="tpl-thumb thumb-modern"><i></i><i></i><i></i><i></i></span>
+            <span data-i18n="tplModern">Modern</span>
+          </button>
+        </div>
+
+        <label class="label" data-i18n="accent">Accent color</label>
+        <div class="swatches" id="swatches"><!-- filled by app.js --></div>
+      </div>
+    </details>
+
+    <!-- Sender -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-building"/></svg></span>
+        <span class="card-title" data-i18n="secFrom">Your Business</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="logo-row">
+          <label class="dropzone" id="dropzone" for="logoInput">
+            <img id="logoPreview" alt="" hidden>
+            <span class="dz-empty" id="dzEmpty">
+              <svg class="ic"><use href="#i-image"/></svg>
+              <strong data-i18n="logoDrop">Upload logo</strong>
+              <small data-i18n="logoHint">PNG, JPG or SVG</small>
+            </span>
+          </label>
+          <input type="file" id="logoInput" accept="image/*" hidden>
+          <button type="button" class="btn btn-sm btn-outline" id="logoRemove" data-action="logo-remove" hidden><svg class="ic"><use href="#i-x"/></svg><span data-i18n="logoRemove">Remove</span></button>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label data-i18n="name">Full name</label><input type="text" data-bind="sender.name" data-i18n-ph="phName" autocomplete="name"></div>
+          <div class="field"><label data-i18n="company">Company</label><input type="text" data-bind="sender.company" data-i18n-ph="phCompany" autocomplete="organization"></div>
+          <div class="field"><label data-i18n="email">Email</label><input type="email" data-bind="sender.email" data-i18n-ph="phEmail" autocomplete="email"></div>
+          <div class="field"><label data-i18n="phone">Phone</label><input type="tel" data-bind="sender.phone" data-i18n-ph="phPhone" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label data-i18n="address">Address</label><textarea rows="2" data-bind="sender.address" data-i18n-ph="phAddress"></textarea></div>
+      </div>
+    </details>
+
+    <!-- Client -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-user"/></svg></span>
+        <span class="card-title" data-i18n="secClient">Bill To</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="grid-2">
+          <div class="field"><label data-i18n="name">Full name</label><input type="text" data-bind="client.name" data-i18n-ph="phClientName"></div>
+          <div class="field"><label data-i18n="company">Company</label><input type="text" data-bind="client.company" data-i18n-ph="phClientCompany"></div>
+        </div>
+        <div class="field"><label data-i18n="email">Email</label><input type="email" data-bind="client.email" data-i18n-ph="phClientEmail"></div>
+        <div class="field"><label data-i18n="address">Address</label><textarea rows="2" data-bind="client.address" data-i18n-ph="phAddress"></textarea></div>
+      </div>
+    </details>
+
+    <!-- Invoice details -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-calendar"/></svg></span>
+        <span class="card-title" data-i18n="secDetails">Invoice Details</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="grid-2">
+          <div class="field"><label data-i18n="invNumber">Invoice #</label><input type="text" data-bind="invoice.number" class="mono"></div>
+          <div class="field"><label data-i18n="currency">Currency</label><select data-bind="invoice.currency" id="currencySelect"></select></div>
+          <div class="field"><label data-i18n="issueDate">Issue date</label><input type="date" data-bind="invoice.date"></div>
+          <div class="field"><label data-i18n="dueDate">Due date</label><input type="date" data-bind="invoice.due" id="dueInput"></div>
+        </div>
+        <div class="chips">
+          <span class="chips-label" data-i18n="dueIn">Due in</span>
+          <button type="button" class="chip-btn" data-action="due" data-value="0" data-i18n="dueNow">On receipt</button>
+          <button type="button" class="chip-btn" data-action="due" data-value="7">7</button>
+          <button type="button" class="chip-btn" data-action="due" data-value="14">14</button>
+          <button type="button" class="chip-btn" data-action="due" data-value="30">30</button>
+          <button type="button" class="chip-btn" data-action="due" data-value="60">60</button>
+        </div>
+        <div class="field">
+          <label data-i18n="status">Status stamp</label>
+          <select data-bind="invoice.status">
+            <option value="" data-i18n="stNone">None</option>
+            <option value="unpaid" data-i18n="stUnpaid">Unpaid</option>
+            <option value="paid" data-i18n="stPaid">Paid</option>
+            <option value="overdue" data-i18n="stOverdue">Overdue</option>
+          </select>
+        </div>
+      </div>
+    </details>
+
+    <!-- Items -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-list"/></svg></span>
+        <span class="card-title" data-i18n="secItems">Line Items</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="items-head" aria-hidden="true">
+          <span data-i18n="description">Description</span>
+          <span data-i18n="qty">Qty</span>
+          <span data-i18n="rate">Rate</span>
+          <span class="ta-end" data-i18n="amount">Amount</span>
+          <span></span>
+        </div>
+        <div id="itemsList" class="items-list"><!-- rows rendered by app.js --></div>
+        <button type="button" class="btn btn-dashed" data-action="add-item"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="addItem">Add item</span></button>
+      </div>
+    </details>
+
+    <!-- Tax & discount -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-percent"/></svg></span>
+        <span class="card-title" data-i18n="secTotals">Tax &amp; Discount</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="grid-2">
+          <div class="field"><label data-i18n="taxRate">Tax rate (%)</label><input type="number" min="0" step="any" inputmode="decimal" data-bind="taxRate" placeholder="0"></div>
+          <div class="field">
+            <label data-i18n="discount">Discount</label>
+            <div class="input-group">
+              <input type="number" min="0" step="any" inputmode="decimal" data-bind="discount" placeholder="0">
+              <div class="seg" role="group">
+                <button type="button" data-action="discount-type" data-value="percent">%</button>
+                <button type="button" data-action="discount-type" data-value="fixed" id="fixedBtn">$</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mini-totals" id="miniTotals"><!-- rendered by app.js --></div>
+      </div>
+    </details>
+
+    <!-- Notes & terms -->
+    <details class="card" open>
+      <summary class="card-head">
+        <span class="card-icon"><svg class="ic"><use href="#i-file"/></svg></span>
+        <span class="card-title" data-i18n="secNotes">Notes &amp; Terms</span>
+        <svg class="ic chevron"><use href="#i-chevron"/></svg>
+      </summary>
+      <div class="card-body">
+        <div class="field"><label data-i18n="notes">Notes</label><textarea rows="3" data-bind="notes" data-i18n-ph="phNotes"></textarea></div>
+        <div class="field"><label data-i18n="terms">Payment terms</label><textarea rows="3" data-bind="terms" data-i18n-ph="phTerms"></textarea></div>
+      </div>
+    </details>
+
+    <p class="editor-foot" data-i18n="privacy">🔒 100% private — your data never leaves this browser.</p>
+  </section>
+
+  <!-- ---------- LIVE PREVIEW ---------- -->
+  <section class="preview-pane" id="previewPane" aria-label="Invoice preview">
+    <div class="preview-head">
+      <div>
+        <h2><span class="live-dot"></span><span data-i18n="livePreview">Live preview</span></h2>
+        <p data-i18n="previewSub">A4 · updates as you type</p>
+      </div>
+      <span class="tpl-chip" id="tplChip">Modern</span>
+    </div>
+    <div class="paper-wrap" id="paperWrap">
+      <div class="paper-scale" id="paperScale">
+        <div id="invoice" class="inv"><!-- rendered by app.js --></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= MOBILE BOTTOM BAR ================= -->
+<nav class="mobile-tabs" aria-label="View">
+  <button class="tab active" data-action="view" data-value="edit"><svg class="ic"><use href="#i-pencil"/></svg><span data-i18n="tabEdit">Edit</span></button>
+  <button class="tab" data-action="view" data-value="preview"><svg class="ic"><use href="#i-eye"/></svg><span data-i18n="tabPreview">Preview</span></button>
+  <button class="btn btn-primary" data-action="download"><svg class="ic"><use href="#i-download"/></svg><span>PDF</span></button>
+</nav>
+
+<!-- ================= DRAFTS MODAL ================= -->
+<div class="modal" id="draftsModal" hidden>
+  <div class="modal-backdrop" data-action="close-modal"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="draftsTitle">
+    <div class="modal-head">
+      <h3 id="draftsTitle" data-i18n="draftsTitle">Saved drafts</h3>
+      <button class="icon-btn" data-action="close-modal" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body" id="draftsList"></div>
+  </div>
+</div>
+
+<!-- ================= CONFIRM MODAL ================= -->
+<div class="modal" id="confirmModal" hidden>
+  <div class="modal-backdrop" data-action="confirm-no"></div>
+  <div class="modal-card modal-sm" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="confirm-icon"><svg class="ic"><use href="#i-trash"/></svg></div>
+    <h3 id="confirmTitle"></h3>
+    <p id="confirmMsg"></p>
+    <div class="modal-actions">
+      <button class="btn btn-outline" data-action="confirm-no" data-i18n="cancel">Cancel</button>
+      <button class="btn btn-danger" data-action="confirm-yes" id="confirmOk">OK</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<!-- ================= LIBRARIES (CDN with local fallback) ================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>window.jspdf || document.write('<script src="lib/jspdf.umd.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>window.html2canvas || document.write('<script src="lib/html2canvas.min.js"><\/script>')</script>
+
+<script src="app.js"></script>
+</body>
+</html>
