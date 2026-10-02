@@ -17,7 +17,7 @@ WINDOWS:
   1. Right-click the ZIP file  →  "Extract All…"
   2. Choose a folder (Desktop is fine) → click "Extract"
   3. You will get a folder containing: index.html , style.css ,
-     app.js , icon.svg , README.md and a folder called "Iib"
+     app.js , icon.svg , README.md and a folder called "lib"
   مهم: ما تفتحش الملف من جوه الـ ZIP. لازم تعمل Extract الأول.
 
 MAC:
