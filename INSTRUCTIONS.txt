@@ -1,0 +1,169 @@
+==============================================================
+   InvoiceCraft  —  START HERE  |  ابدأ من هنا
+   دليل بسيط خطوة بخطوة  |  Simple step-by-step guide
+==============================================================
+
+Welcome! أهلاً بك 💙
+Thank you for buying InvoiceCraft. شكراً لشرائك البرنامج!
+مش محتاج تكون مبرمج — كل حاجة مشروحة هنا بالعربي والإنجليزي.
+No coding needed — everything is explained in Arabic + English.
+
+
+--------------------------------------------------------------
+1) OPEN THE ZIP FILE  |  فتح ملف الـ ZIP
+--------------------------------------------------------------
+
+WINDOWS:
+  1. Right-click the ZIP file  →  "Extract All…"
+  2. Choose a folder (Desktop is fine) → click "Extract"
+  3. You will get a folder containing: index.html , style.css ,
+     app.js , icon.svg , README.md and a folder called "Iib"
+  مهم: ما تفتحش الملف من جوه الـ ZIP. لازم تعمل Extract الأول.
+
+MAC:
+  1. Double-click the ZIP file — macOS extracts it automatically.
+  2. You get a folder next to the ZIP file. Done!
+  على الماك، الضغط المزدوج بيفك الملف لوحده.
+
+PHONE (Android / iPhone):
+  1. Open the "Files" app (Android) or "Files" app (iPhone).
+  2. Tap the ZIP file once → it usually extracts automatically.
+     • Android: tap "Extract" if you see it.
+     • iPhone: tap the ZIP once, it creates a new blue folder.
+  3. Open the new folder — you will see index.html inside.
+  لو مقدرتش تفك الملف على الموبايل، افتحه على الكمبيوتر وانقله
+  بعدين — أو استخدم أي تطبيق "unzip" مجاني من المتجر.
+
+
+--------------------------------------------------------------
+2) RUN THE APP  |  تشغيل البرنامج على الكمبيوتر
+--------------------------------------------------------------
+
+  1. Open the extracted folder.
+  2. Double-click  index.html
+  3. It opens in your browser (Chrome, Firefox, Safari, Edge).
+  خلاص! البرنامج شغال. املأ بياناتك واضغط "Download PDF".
+
+If it opens in the wrong program:
+  Right-click index.html → "Open with" → Google Chrome.
+  أو اسحب الملف ودخله على نافذة المتصفح مباشرة.
+
+
+--------------------------------------------------------------
+3) INSTALL AS A PHONE APP  |  تثبيت البرنامج كتطبيق على الموبايل
+--------------------------------------------------------------
+
+Note / ملاحظة مهمة:
+  التثبيت كتطبيق محتاج البرنامج يكون مرفوع على الإنترنت (خطوة 7)
+  أو على أي لينك https — لأن المتصفح بيمنع التثبيت من ملف محلي.
+
+ANDROID (Chrome):
+  1. Open your InvoiceCraft link in Chrome.
+  2. Tap the three dots menu (⋮) at the top right.
+  3. Tap "Install app"  أو  "Add to Home screen".
+  4. Confirm → the InvoiceCraft icon appears on your home screen.
+  افتحه من الأيقونة زي أي تطبيق عادي!
+
+IPHONE (Safari):
+  1. Open your InvoiceCraft link in Safari (لازم Safari).
+  2. Tap the Share button (المربع اللي فيه سهم لفوق).
+  3. Scroll down → tap "Add to Home Screen" → "Add".
+  4. الأيقونة هتظهر على الشاشة الرئيسية.
+
+
+--------------------------------------------------------------
+4) CUSTOMIZE IT  |  تعديل الألوان واللوجو والنصوص
+--------------------------------------------------------------
+
+** Colors  |  الألوان **
+  من داخل البرنامج: اضغط على أي لون من السبع ألوان، أو اختر
+  "Custom color" واختار أي لون انت عايزه. مفيش أي كود مطلوب.
+
+  بشكل دائم (اختياري): افتح style.css بأي محرر نصوص (Notepad)
+  وعدّل السطر:  --primary: #2563eb;   → حط اللون بتاعك.
+
+** Logo  |  اللوجو **
+  من داخل البرنامج: اضغط على خانة اللوجو وارفع صورتك (PNG/JPG).
+  أو استبدل ملف icon.svg بملف اللوجو بتاعك بنفس الاسم بالظبط.
+
+** Text  |  النصوص **
+  كل الكلام (عربي/إنجليزي) موجود في app.js داخل الجزء المسمى
+  I18N — افتح الملف بأي محرر نصوص وعدّل الجمل بين علامتي التنصيص
+  '...'  بس خد بالك ما تمسحش علامات التنصيص أو الفواصل.
+  المهم: خد نسخة احتياطية (Copy) من الملف قبل ما تعدل.
+
+** Colors in the app  |  الألوان داخل البرنامج **
+  اضغط "Custom color" واختار اللون اللي يعجبك — البرنامج بيتذكره.
+
+
+--------------------------------------------------------------
+5) OFFLINE  |  العمل بدون إنترنت
+--------------------------------------------------------------
+
+  • الطريقة العادية: البرنامج شغال بدون إنترنت أصلاً لو بتفتحه
+    من ملف index.html على جهازك.
+  • لو رفعته على لينك ومفتوح في المتصفح: أول مرة افتحه والإنترنت
+    شغال، وبعد كده بيشتغل أوفلاين لوحده (بيحفظ نفسه).
+  • لو ثبّته كتطبيق (خطوة 3): يشتغل أوفلاين على طول.
+  Everything stays on YOUR device — no data is ever uploaded.
+
+
+--------------------------------------------------------------
+6) WHERE TO HOST IT (FREE)  |  ترفعه فين مجاناً
+--------------------------------------------------------------
+
+ارفع البرنامج على الإنترنت لو عايز لينك تبعته لعملائك، أو تحطه
+على الموبايل كتطبيق. اختار أي واحدة من التلاتة (كلهم مجانيين):
+
+--- OPTION A: NETLIFY (الأسهل) ---
+  1. Go to  app.netlify.com/drop   (اعمل حساب مجاني)
+  2. اسحب فولدر البرنامج كله وارميه على الصفحة (Drag & Drop).
+  3. خلاص! هيديك لينك مجاني زي:  your-name.netlify.app
+  4. من Settings تقدر تغيّر اسم اللينك لأي اسم تحبه.
+
+--- OPTION B: VERCEL ---
+  1. Go to  vercel.com  → Sign up مجاناً.
+  2. اضغط  "Add New…"  →  "Project".
+  3. من "Deploy" اسحب الفولدر، أو اربط حساب GitHub بتاعك.
+  4. Deploy → هيظهرلك لينك زي:  your-name.vercel.app
+
+--- OPTION C: GITHUB PAGES ---
+  1. اعمل حساب على github.com واعمل Repository جديد (Public).
+  2. ارفع ملفات البرنامج كلها (Upload files → Commit).
+  3. Settings → Pages → من Branch اختار "main" و"/(root)" → Save.
+  4. استنى دقيقة، واللينك هيكون:
+     https://your-username.github.io/your-repo-name/
+
+  نصيحة: اسم الملف الرئيسي لازم يفضل index.html بالظبط.
+  After uploading, you can install it as a phone app (step 3).
+
+
+--------------------------------------------------------------
+7) NEED HELP?  |  محتاج مساعدة؟
+--------------------------------------------------------------
+
+  📧  Email:  amjad.python.dev@yandex.com
+  ⏱️  الرد خلال 24 ساعة — Response within 24 hours.
+
+  وانت بتكتب، اذكر:
+    • اسمك / Your name
+    • المشكلة بالظبط / What happened
+    • المتصفح والجهاز / Browser + device (Chrome, Windows…)
+    • صورة للشاشة لو ممكن / A screenshot if possible
+  ده يساعدنا نحل مشكلتك بسرعة 🙏
+
+
+--------------------------------------------------------------
+Quick checklist  |  قائمة سريعة
+--------------------------------------------------------------
+  [ ] فك ضغط الـ ZIP          →  Extracted the ZIP
+  [ ] افتح index.html         →  Opened the app
+  [ ] جرب تكتب فاتورة         →  Made a test invoice
+  [ ] نزّل PDF                →  Downloaded a PDF
+  [ ] (اختياري) ارفع على Netlify  →  Hosted it (optional)
+  [ ] ثبّته على الموبايل       →  Installed on phone
+
+شكراً لثقتك في InvoiceCraft! بالتوفيق في مشروعك 🚀
+Thank you for supporting InvoiceCraft. Happy invoicing!
+
+© 2026 Amjad. All rights reserved.
